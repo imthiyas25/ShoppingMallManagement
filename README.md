@@ -1,27 +1,31 @@
-🛍️ Shopping Mall Management System
-🚀 Overview
-The Shopping Mall Management System is a full-stack web application designed to enhance the shopping experience for users by providing features such as user registration, product browsing, add-to-cart functionality, and a seamless checkout process. The system is built using Angular for the frontend and Spring Boot for the backend, ensuring a responsive and efficient experience.
+# 🛍️ Shopping Mall Management System  
 
-🏗️ Tech Stack
-🎨 Frontend
-Angular – Modern and dynamic UI components
+![GitHub Repo stars](https://img.shields.io/github/stars/yourusername/shopping-mall-management?style=social)
+![GitHub forks](https://img.shields.io/github/forks/yourusername/shopping-mall-management?style=social)
+![GitHub issues](https://img.shields.io/github/issues/yourusername/shopping-mall-management)
+![GitHub license](https://img.shields.io/github/license/yourusername/shopping-mall-management)
 
-TypeScript – Type-safe scripting for enhanced maintainability
+## 🚀 Overview  
+The **Shopping Mall Management System** is a full-stack web application designed to enhance the shopping experience by offering features such as **user registration, product browsing, cart management, and secure checkout**.  
 
-Bootstrap/Tailwind CSS – Responsive design
+The system is developed using:  
+- 🖥️ **Frontend:** Angular  
+- ⚙️ **Backend:** Spring Boot  
+- 💾 **Database:** MySQL/PostgreSQL  
 
-🛠️ Backend
-Spring Boot – Robust backend framework
+## 🏗️ Tech Stack  
+| Technology | Description |
+|------------|------------|
+| **Angular** | Modern frontend framework |
+| **Spring Boot** | Powerful backend framework |
+| **TypeScript** | Strongly typed JavaScript |
+| **MySQL/PostgreSQL** | Relational database for data storage |
+| **Spring Security** | User authentication and authorization |
+| **Bootstrap/Tailwind** | Responsive UI styling |
 
-Java – High-performance server-side logic
-
-Spring Security – Secure authentication and authorization
-
-MySQL/PostgreSQL – Scalable relational database
-
-🔥 Features
-✅ User Registration & Authentication – Secure sign-up and login with role-based access
-✅ Product Management – View, search, and filter products efficiently
-✅ Shopping Cart – Add, remove, and update items in real time
-✅ Checkout & Payment Integration – Smooth checkout with order tracking
-✅ Admin Dashboard – Manage products, users, and transactions seamlessly
+## 🔥 Features  
+✅ **User Registration & Authentication** – Secure login/signup with role-based access  
+✅ **Product Management** – View, search, and filter products  
+✅ **Shopping Cart** – Add, remove, and update items in real-time  
+✅ **Checkout & Payment Integration** – Seamless order placement  
+✅ **Admin Dashboard** – Manage products, users, and transactions  
