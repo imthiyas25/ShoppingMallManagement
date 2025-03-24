@@ -1,0 +1,185 @@
+<div class="">
+  <div style="height:100vh;">
+    <div class="">
+      <div class="shadow w-20 p-5 position-absolute top-50 start-50 translate-middle">
+        <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+          <h4 class="display-6 text-center py-2">Customer Database</h4>
+          
+          <div class="">
+            <label for="cname">Name</label>
+            <div class="">
+              <input id="cname" required #cname="ngModel" ngModel name="cname" type="text"
+                class="form-control" placeholder="Enter customer name">
+              <div *ngIf="cname.invalid && cname.touched">
+                <small class="text-danger" *ngIf="cname.errors?.['required']">Required</small>
+              </div>
+            </div>
+          </div><br>
+
+          <div class="">
+            <label for="email">Email</label>
+            <div class="">
+              <input id="email" required #email="ngModel" ngModel name="email" type="email"
+                class="form-control" placeholder="Enter customer email">
+              <div *ngIf="email.invalid && email.touched">
+                <small class="text-danger" *ngIf="email.errors?.['required']">Required</small>
+              </div>
+            </div>
+          </div><br>
+
+          <div class="">
+            <label for="address">Address</label>
+            <div class="">
+              <input id="address" required #address="ngModel" ngModel name="address" type="text"
+                class="form-control" placeholder="Enter customer address">
+              <div *ngIf="address.invalid && address.touched">
+                <small class="text-danger" *ngIf="address.errors?.['required']">Required</small>
+              </div>
+            </div>
+          </div><br>
+
+          <div class="">
+            <label for="mobileno">Mobile No</label>
+            <div class="">
+              <input id="mobileno" required #mobileno="ngModel" ngModel name="mobileno" type="text"
+                class="form-control" placeholder="Enter mobile number">
+              <div *ngIf="mobileno.invalid && mobileno.touched">
+                <small class="text-danger" *ngIf="mobileno.errors?.['required']">Required</small>
+              </div>
+            </div>
+          </div><br>
+
+          <div class="">
+            <label for="cuscoupons">Coupons</label>
+            <div class="">
+              <input id="cuscoupons" #cuscoupons="ngModel" ngModel name="cuscoupons" type="text"
+                class="form-control" placeholder="Enter customer coupons">
+            </div>
+          </div><br>
+
+          <div class="">
+            <label for="loyaltypoints">Loyalty Points</label>
+            <div class="">
+              <input id="loyaltypoints" required #loyaltypoints="ngModel" ngModel name="loyaltypoints" type="number"
+                class="form-control" placeholder="Enter loyalty points">
+            </div>
+          </div><br>
+
+          <div class="">
+            <label for="birthdate">Birthdate</label>
+            <div class="">
+              <input id="birthdate" required #birthdate="ngModel" ngModel name="birthdate" type="date"
+                class="form-control">
+            </div>
+          </div><br>
+  
+          <div class="form-group text-center">
+            <input class="btn btn-primary" type="submit" value="Submit">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div><br>
+
+  <div class="mt-5">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>Mobile No</th>
+          <th>Coupons</th>
+          <th>Loyalty Points</th>
+          <th>Birthdate</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of customerDetails">
+          <td>{{customer.cid}}</td>
+          <td>{{customer.cname}}</td>
+          <td>{{customer.email}}</td>
+          <td>{{customer.address}}</td>
+          <td>{{customer.mobileno}}</td>
+          <td>{{customer.cuscoupons}}</td>
+          <td>{{customer.loyaltypoints}}</td>
+          <td>{{customer.birthdate}}</td>
+          <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="edit(customer)">Edit</button></td>
+          <td><button type="button" class="btn btn-danger" (click)="deleteCustomer(customer)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Update Customer</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form #updateForm="ngForm" (ngSubmit)="updateCustomer()">
+            <h4 class="display-6 text-center py-2">Update Customer</h4>
+            
+            <div class="">
+              <label for="cname">Name</label>
+              <div class="">
+                <input id="cname" required #cname="ngModel" [(ngModel)]="customerToUpdate.cname" name="cname" type="text"
+                  class="form-control" placeholder="Enter name">
+              </div>
+            </div><br>
+
+            <div class="">
+              <label for="email">Email</label>
+              <div class="">
+                <input id="email" required #email="ngModel" [(ngModel)]="customerToUpdate.email" name="email" type="email"
+                  class="form-control" placeholder="Enter email">
+              </div>
+            </div><br>
+
+            <div class="">
+              <label for="address">Address</label>
+              <div class="">
+                <input id="address" required #address="ngModel" [(ngModel)]="customerToUpdate.address" name="address" type="text"
+                  class="form-control" placeholder="Enter address">
+              </div>
+            </div><br>
+
+            <div class="">
+              <label for="mobileno">Mobile No</label>
+              <div class="">
+                <input id="mobileno" required #mobileno="ngModel" [(ngModel)]="customerToUpdate.mobileno" name="mobileno" type="text"
+                  class="form-control" placeholder="Enter mobile no">
+              </div>
+            </div><br>
+
+            <div class="">
+              <label for="cuscoupons">Coupons</label>
+              <div class="">
+                <input id="cuscoupons" #cuscoupons="ngModel" [(ngModel)]="customerToUpdate.cuscoupons" name="cuscoupons" type="text"
+                  class="form-control" placeholder="Enter coupons">
+              </div>
+            </div><br>
+
+            <div class="">
+              <label for="loyaltypoints">Loyalty Points</label>
+              <div class="">
+                <input id="loyaltypoints" required #loyaltypoints="ngModel" [(ngModel)]="customerToUpdate.loyaltypoints" name="loyaltypoints" type="number"
+                  class="form-control">
+              </div>
+            </div><br>
+       
+            <div class="form-group text-center">
+              <input class="btn btn-primary" type="submit" value="Update">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
